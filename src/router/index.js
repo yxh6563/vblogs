@@ -1,45 +1,24 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+//一级路由
 import ShowBlogs from '@/components/ShowBlogs'
-import Addlog from '@/components/Addlog'
 import SingleBlogs from '@/components/SingleBlogs'
-import Usercenter from '@/components/Usercenter'
-import Login from '@/components/Login'
-import AuthSign from '@/components/AuthSign'
-import Register from '@/components/Register'
-
+import AddBlog from '@/components/AddBlog'
+import Mine from '@/components/Mine/Mine'
+//二级路由
+//三级路由
+import Login from '@/components/Mine/Login'
+import Register from '@/components/Mine/Register'
 Vue.use(Router)
 
 export default new Router({
   mode:'history',
   routes: [
-    {
-      path: '/',
-      component: ShowBlogs
-    },
-    {
-      path: '/add',
-      component: Addlog
-    },
-    {
-      path: '/blog/:id',
-      component: SingleBlogs
-    },
-    {
-      path: '/usercenter',
-      component: Usercenter
-    },
-    {
-      path: '/login',
-      component: Login
-    },
-    {
-      path: '/authsign',
-      component: AuthSign
-    },
-    {
-      path: '/register',
-      component: Register
-    }
+    {path:'/',component:ShowBlogs},
+    {path:'/blog/:id',component:SingleBlogs},
+    {path:'/addBlog',component:AddBlog},
+    {path:'/mine',component:Mine},
+    {path:'/login',component:Login},
+    {path:'/register',component:Register}
   ]
 })

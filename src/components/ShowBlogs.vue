@@ -1,12 +1,8 @@
 <template>
   <div id="show-blogs" v-theme:column="'narrow'">
-       <!-- <div class="nav">
-       <div class="dialog"> -->
          <input type="text" placeholder="搜索文章" v-model="search"/>
          <i class="iconfont icon-shousuo"></i>
-         <!-- <blog-header></blog-header>
-       <!-- </div>
-   </div> -->
+         
    <h1>博客总览</h1>
    <div class="single-blog" v-for="blog in filteredBlogs">
        <router-link v-bind:to="'/blog/'+ blog.id">
@@ -76,8 +72,6 @@ input[type="text"]{
 }
 .icon-shousuo{
     font-size: 35px;
-    /* width: 35px;
-    height: 30px; */
     color: #fff;
     margin-left: 20px;
     margin-top: 20px;

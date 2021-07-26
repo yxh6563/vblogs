@@ -6,21 +6,6 @@
           <input type="text" v-model="blog.title" required/>
       <label>博客内容:</label>
           <textarea v-model="blog.content"></textarea>
-      <div id="checkboxes">
-        <label>博客分类:</label>
-        <label>Vue.js</label>
-        <input type="checkbox" value="Vue.js" v-model="blog.categorys"/>
-        <label>Angulard4</label>
-        <input type="checkbox" value="Angulard4" v-model="blog.categorys"/>
-        <label>Node.js</label>
-        <input type="checkbox" value="Node.js" v-model="blog.categorys"/>
-        <label>React.js</label>
-        <input type="checkbox" value="React.js" v-model="blog.categorys"/>
-      </div>
-      <label>作者:</label>
-      <select v-model="blog.author">
-        <option v-for="author in authors">{{author}}</option>
-      </select>
       <button v-on:click.prevent="post">添加博客</button>
     </form>
     <div v-if="submited">
@@ -30,13 +15,8 @@
     <div id="preview">
       <h3>博客总览</h3>
       <p>博客标题:{{blog.title}}</p>
-      <p>博客标题:</p>
+      <p>博客内容:</p>
       <p>{{blog.content}}</p>
-      <p>博客分类:</p>
-      <ul>
-        <li v-for="category in blog.categorys">{{category}}</li>
-      </ul>
-      <p>作者:{{blog.author}}</p>
     </div>
   </div>
 </template>
@@ -49,10 +29,10 @@ export default {
       blog:{
         title: '',
         content: '',
-        categorys:[],
-        author:""
+        // categorys:[],
+        // author:""
       },
-      authors:["Henry","July","Tom"],
+      // authors:["Henry","July","Tom"],
       submited:false
     }
   },

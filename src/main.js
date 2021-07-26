@@ -7,26 +7,24 @@ import App from './App'
 import router from './router'
 import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
-import Vuex from 'vuex'
-
-// import Routes from './routes'
-Vue.use(ElementUI);
+import {store} from './store/store'
+Vue.use(ElementUI)
 Vue.use(VueResource)
 Vue.use(VueRouter)
-Vue.use(Vuex)
+
 
 Vue.config.productionTip = false
 
 
-const vuex_store = new Vuex.Store({
-  state:{
-    totalmess: 0, //未读消息总数，在footer公用组件
-    title: '登录' ////每个页面的名称，在nav公用组件中
-  },
-  mutations:{
+// const vuex_store = new Vuex.Store({
+//   state:{
+//     totalmess: 0, //未读消息总数，在footer公用组件
+//     title: '登录' ////每个页面的名称，在nav公用组件中
+//   },
+//   mutations:{
 
-  }
-})
+//   }
+// })
 //自定义指令
 Vue.directive('rainbow',{
   bind(el,binding,vnode){
@@ -58,7 +56,7 @@ Vue.filter("sninspect",function(value){
 new Vue({
   el: '#app',
   router,
-  store: vuex_store,
+  store,
   components: { App },
   template: '<App/>'
 })
